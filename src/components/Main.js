@@ -53,6 +53,8 @@ class Main extends Component {
 
         return(
             <div>
+                <h2 className="">Registration</h2>
+                <p>Caution! This is funny form.</p>
                 {this.showStep()}
             </div>
         );
