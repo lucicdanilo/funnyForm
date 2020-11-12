@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Main.css';
 import FirstStep from '../FirstStep/FirstStep';
 import SecondStep from '../SecondStep/SecondStep';
 import FinalStep from '../FinalStep/FinalStep';
@@ -6,17 +7,13 @@ import FinalStep from '../FinalStep/FinalStep';
 class Main extends Component {
 
     state = {
-
         step: 1,
-
         firstName: '',
         lastName: '',
-
         username: '',
         email: '',
         password: '',
         passwordConfirm: ''
-
     }
 
     showStep = () => {
@@ -57,18 +54,14 @@ class Main extends Component {
     }
 
     nextStep = () => {
-
         const { step } = this.state;
-
         this.setState({
             step: step + 1 
         });
     }
 
     previousStep = () => {
-
         const { step } = this.state;
-
         this.setState({
             step: step - 1 
         });
@@ -79,11 +72,9 @@ class Main extends Component {
     }
 
     render(){
-
         const { step } = this.state;
-
         return(
-            <div>
+            <div className="main">
                 <h2>Registration</h2>
                 <p>Caution! This is funny form.</p>
                 {this.showStep()}

@@ -9,9 +9,7 @@ class FirstStep extends Component {
     }
 
     render(){
-
         const { firstName, lastName, handleChange } = this.props;
-
         return(
             <div className="firstStep">
                 <input 
@@ -28,7 +26,7 @@ class FirstStep extends Component {
                     value = { lastName }
                     onChange = { handleChange('lastName') }
                 />
-                <button onClick={ this.nextStep }>Next</button>
+                <a className="nextBtn" onClick={ this.nextStep }>Next</a>
             </div>
         )
     }

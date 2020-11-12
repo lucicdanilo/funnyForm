@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './FinalStep';
 
 class FinalStep extends Component {
 
@@ -43,10 +44,9 @@ class FinalStep extends Component {
         }
 
         console.log(formData);
-
         return (
             <div>
-                You are suceesful registered!
+                <h3 className="successfulMsg">You are suceesful registered!</h3>
             </div>
         )
     }

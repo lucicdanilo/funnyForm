@@ -47,12 +47,12 @@ class SecondStep extends Component {
                     value = { passwordConfirm }
                     onChange = { handleChange('passwordConfirm') }
                 />
-                <button onClick={ this.previousStep } >
+                <a className="backBtn" onClick={ this.previousStep } >
                     Back
-                </button>
-                <button onClick={ this.submitButton } >
+                </a>
+                <a className="nextBtn" onClick={ this.submitButton } >
                     Submit
-                </button>
+                </a>
             </div>
         )
     }
