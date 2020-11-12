@@ -1,0 +1,8 @@
+.firstStep > input{
+    display: block; 
+    margin: 10px;
+}
+
+.firstStep > button {
+    margin: 10px;
+}
