@@ -44,13 +44,9 @@ class FinalStep extends Component {
         }
 
         function submitRegistration(formData){
-            return new Promise((fulfill) => {
+            return new Promise(() => {
                 setTimeout(function (){
-                    fulfill({
-                        "info":{
-                            success: true
-                        }
-                    });
+                    console.log(formData);                   
                 }, 1000);
             }, (error) => {
                 setTimeout(function (){

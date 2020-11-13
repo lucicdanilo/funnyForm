@@ -11,7 +11,6 @@ class SecondStep extends Component {
     submitButton = event => {
         event.preventDefault();
         this.props.toThirdStep();
- 
     }
 
     render(){
@@ -22,7 +21,9 @@ class SecondStep extends Component {
             password,
             passwordConfirm,
             handleChange, 
-            handleBlur 
+            handleBlur,
+            termsAndConditions,
+            termsAndConditionsError
         } = this.props;
 
         return(
@@ -55,14 +56,21 @@ class SecondStep extends Component {
                 />
                 { this.props.passwordError }
                 <input 
-                    type="password"
-                    name="passwordConfirm"
+                    type = "password"
+                    name = "passwordConfirm"
                     placeholder = "Confirm Password"
                     value = { passwordConfirm }
                     onChange = { handleChange('passwordConfirm') }
                     onBlur = { handleBlur('passwordConfirm') }
                 />
                 { this.props.passwordConfirmError }
+                <input
+                    type = "checkbox"
+                    name = "termsAndConditions"
+                    checked = { termsAndConditions }
+                    onChange = { handleChange('termsAndConditions') }
+                />
+                { this.props.termsAndConditionsError }
                 <br />
                 <a className="backBtn" onClick={ this.previousStep } >
                     Back

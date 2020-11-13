@@ -19,7 +19,9 @@ class Main extends Component {
         usernameError: '',
         emailError: '',
         passwordError: '',
-        passwordConfirmError: ''
+        passwordConfirmError: '',
+        termsAndConditions: false,
+        termsAndConditionsError: ''
     }
 
     showStep = () => {
@@ -49,6 +51,8 @@ class Main extends Component {
                 emailError = { this.state.emailError }
                 passwordError = { this.state.passwordError }
                 passwordConfirmError = { this.state.passwordConfirmError }
+                termsAndConditions = { this.state.termsAndConditions}
+                termsAndConditionsError = { this.state.termsAndConditionsError }
             />);
         }
 
@@ -90,9 +94,13 @@ class Main extends Component {
             if(this.state.password.length > 0){
                 if(this.state.passwordConfirm.length > 0){
                     if(this.state.password === this.state.passwordConfirm){
-                        this.setState({
-                            step: this.state.step + 1 
-                        }); 
+                        if(this.state.termsAndConditions === true){
+                            this.setState({
+                                step: this.state.step + 1 
+                            }); 
+                        }else{
+                            this.setState({ termsAndConditionsError: "Terms and Coditions must be checked!" })
+                        }
                     }else{
                         this.setState({ passwordConfirmError: "Passwords are not same!" })
                     }
@@ -122,6 +130,9 @@ class Main extends Component {
         if( input === 'email' ){ this.setState({ emailError: '' }) }
         if( input === 'password' ){ this.setState({ passwordError: '' }) }
         if( input === 'passwordConfirm' ){ this.setState({ passwordConfirmError: '' }) }
+        if( input === 'termsAndConditions' ){ 
+            this.setState({ termsAndConditions: !this.state.termsAndConditions })
+        }
     }
 
     handleBlur = input => event => {   
@@ -166,7 +177,7 @@ class Main extends Component {
 
         if(input === 'password'){
             if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value))){
-                this.setState({ passwordError: "This is not valid format od password!"});
+                this.setState({ passwordError: "This is not valid format od password!" });
             }
             if( event.target.value.length === 0 ){
                 this.setState({ passwordError: "Password is required!" });
@@ -177,7 +188,7 @@ class Main extends Component {
             if(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value)){
 
             }else{
-                this.setState({ passwordConfirmError: "This is not valid format od password!"});
+                this.setState({ passwordConfirmError: "This is not valid format od password!" });
             }
         }
     }
@@ -189,6 +200,7 @@ class Main extends Component {
                 <h2>Registration</h2>
                 <p>Caution! This is funny form.</p>
                 { this.showStep() }
+                <div>{ step } of 3</div>
             </div>
         );
     }
