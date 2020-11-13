@@ -10,12 +10,20 @@ class SecondStep extends Component {
 
     submitButton = event => {
         event.preventDefault();
-        this.props.nextStep();
+        this.props.toThirdStep();
+ 
     }
 
     render(){
 
-        const { username, email, password, passwordConfirm, handleChange } = this.props;
+        const { 
+            username, 
+            email,
+            password,
+            passwordConfirm,
+            handleChange, 
+            handleBlur 
+        } = this.props;
 
         return(
             <div className="secondStep">
@@ -25,28 +33,37 @@ class SecondStep extends Component {
                     placeholder = "Username"
                     value = { username }
                     onChange = { handleChange('username') }
+                    onBlur = { handleBlur('username') }
                 />
+                { this.props.usernameError }
                 <input 
                     type="text"
-                    name="mail"
+                    name="email"
                     placeholder = "Email"
                     value = { email }
                     onChange = { handleChange('email') }
+                    onBlur = { handleBlur('email') }
                 />
+                { this.props.emailError }
                 <input 
                     type="password"
                     name="password"
                     placeholder = "Password"
                     value = { password } 
                     onChange = { handleChange('password') }
+                    onBlur = { handleBlur('password') }
                 />
+                { this.props.passwordError }
                 <input 
                     type="password"
                     name="passwordConfirm"
                     placeholder = "Confirm Password"
                     value = { passwordConfirm }
                     onChange = { handleChange('passwordConfirm') }
+                    onBlur = { handleBlur('passwordConfirm') }
                 />
+                { this.props.passwordConfirmError }
+                <br />
                 <a className="backBtn" onClick={ this.previousStep } >
                     Back
                 </a>

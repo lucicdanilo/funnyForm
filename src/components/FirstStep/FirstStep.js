@@ -3,13 +3,20 @@ import './FirstStep.css';
 
 class FirstStep extends Component {
 
-    nextStep = event => {
+    toSecoundStep = event => {
         event.preventDefault();
-        this.props.nextStep();  
+        this.props.toSecoundStep();  
     }
 
     render(){
-        const { firstName, lastName, handleChange } = this.props;
+
+        const { 
+            firstName, 
+            lastName, 
+            handleChange, 
+            handleBlur 
+        } = this.props;
+
         return(
             <div className="firstStep">
                 <input 
@@ -18,15 +25,20 @@ class FirstStep extends Component {
                     placeholder = "First Name"
                     value = { firstName }
                     onChange = { handleChange('firstName') }
+                    onBlur = { handleBlur('firstName') }
                 />
+                { this.props.firstNameError }
                 <input 
                     type="text"
                     name="lastName"
                     placeholder = "Second Name"
                     value = { lastName }
                     onChange = { handleChange('lastName') }
+                    onBlur = { handleBlur('lastName') }
                 />
-                <a className="nextBtn" onClick={ this.nextStep }>Next</a>
+                { this.props.lastNameError }
+                <br />
+                <a className="nextBtn" onClick={ this.toSecoundStep }>Next</a>
             </div>
         )
     }

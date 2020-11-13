@@ -43,7 +43,24 @@ class FinalStep extends Component {
             ]
         }
 
-        console.log(formData);
+        function submitRegistration(formData){
+            return new Promise((fulfill) => {
+                setTimeout(function (){
+                    fulfill({
+                        "info":{
+                            success: true
+                        }
+                    });
+                }, 1000);
+            }, (error) => {
+                setTimeout(function (){
+                    console.log(error);
+                }, 1000);
+            });
+        }
+
+        submitRegistration(formData);
+
         return (
             <div>
                 <h3 className="successfulMsg">You are suceesful registered!</h3>
