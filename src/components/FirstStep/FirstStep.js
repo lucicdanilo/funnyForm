@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FirstStep.css';
+import Monkey from '../../images/monkey.png';
 
 class FirstStep extends Component {
 
@@ -19,24 +20,35 @@ class FirstStep extends Component {
 
         return(
             <div className="firstStep">
+                <img 
+                src = { Monkey }
+                style = {{
+                    position: "absolute",
+                    width: "25%",
+                    top: "0%",
+                    left: "-95%"
+                }}
+                />
                 <input 
                     type = "text"
                     name = "firstName"
+                    className = "inputField"
                     placeholder = "First Name"
                     value = { firstName }
                     onChange = { handleChange('firstName') }
                     onBlur = { handleBlur('firstName') }
                 />
-                { this.props.firstNameError }
+                <div className = "inputFieldError"> { this.props.firstNameError } </div>
                 <input 
                     type="text"
                     name="lastName"
-                    placeholder = "Second Name"
+                    className = "inputField"
+                    placeholder = "Last Name"
                     value = { lastName }
                     onChange = { handleChange('lastName') }
                     onBlur = { handleBlur('lastName') }
                 />
-                { this.props.lastNameError }
+                <div className = "inputFieldError"> { this.props.lastNameError } </div>
                 <br />
                 <a className="nextBtn" onClick={ this.toSecoundStep }>Next</a>
             </div>

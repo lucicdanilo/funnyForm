@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './FinalStep';
+import Monkey3 from '../../images/monkey3.png';
 
 class FinalStep extends Component {
 
@@ -59,6 +60,15 @@ class FinalStep extends Component {
 
         return (
             <div>
+                <img 
+                src = { Monkey3 } 
+                style = {{ 
+                    position: "absolute",
+                    width: "25%",
+                    top: "0%",
+                    left: "-55%"
+                }} 
+                />
                 <h3 className="successfulMsg">You are suceesful registered!</h3>
             </div>
         )

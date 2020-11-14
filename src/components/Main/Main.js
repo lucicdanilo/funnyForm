@@ -200,7 +200,7 @@ class Main extends Component {
                 <h2>Registration</h2>
                 <p>Caution! This is funny form.</p>
                 { this.showStep() }
-                <div>{ step } of 3</div>
+                <div className="status">{ step } of 3</div>
             </div>
         );
     }
