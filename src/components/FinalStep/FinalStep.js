@@ -69,7 +69,11 @@ class FinalStep extends Component {
                     left: "-55%"
                 }} 
                 />
-                <h3 className="successfulMsg">You are suceesful registered!</h3>
+                <h3 
+                style = {{
+                    color: "#08b84c"
+                }}
+                >You are suceesful registered!</h3>
             </div>
         )
     }
