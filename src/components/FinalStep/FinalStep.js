@@ -3,6 +3,7 @@ import './FinalStep';
 import Monkey3 from '../../images/monkey3.png';
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
+import Loader from 'react-loader-spinner'
 
 
 class FinalStep extends Component {
@@ -48,9 +49,10 @@ class FinalStep extends Component {
         }
 
         function submitRegistration(formData){
-            return new Promise(() => {
+            return new Promise((resolve, reject) => {
                 setTimeout(function (){
-                    console.log(formData);                   
+                    console.log(formData);         
+                    document.getElementById('successfulMsg').style.display = "block";
                 }, 1000);
             }, (error) => {
                 setTimeout(function (){
@@ -76,10 +78,19 @@ class FinalStep extends Component {
                 </Bounce>
                 <Fade bottom>
                     <h3 
+                    id = "successfulMsg"
                     style = {{
-                        color: "#08b84c"
+                        color: "#08b84c",
+                        display: "none"
                     }}
-                    >You are suceesful registered!</h3>
+                >Your data was successful submited!</h3>
+                    <Loader
+                        type="Oval"
+                        color="#08b84c"
+                        height={100}
+                        width={100}
+                        timeout={1000}
+                    />
                 </Fade>
             </div>
         )
