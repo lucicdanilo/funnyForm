@@ -3,6 +3,8 @@ import './Main.css';
 import FirstStep from '../FirstStep/FirstStep';
 import SecondStep from '../SecondStep/SecondStep';
 import FinalStep from '../FinalStep/FinalStep';
+import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
 class Main extends Component {
 
@@ -197,10 +199,14 @@ class Main extends Component {
         const { step } = this.state;
         return(
             <div className="main">
-                <h2>Registration</h2>
+                <Slide right>
+                <h2 className = "registration">Registration</h2>
                 <p>Caution! This is funny form.</p>
+                </Slide>
                 { this.showStep() }
-                <div className="status">{ step } of 3</div>
+                <Fade bottom>
+                    <div className="status">{ step } of 3</div>
+                </Fade>
             </div>
         );
     }

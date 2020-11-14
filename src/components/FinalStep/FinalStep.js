@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './FinalStep';
 import Monkey3 from '../../images/monkey3.png';
+import Fade from 'react-reveal/Fade';
+import Bounce from 'react-reveal/Bounce';
+
 
 class FinalStep extends Component {
 
@@ -60,20 +63,24 @@ class FinalStep extends Component {
 
         return (
             <div>
-                <img 
-                src = { Monkey3 } 
-                style = {{ 
-                    position: "absolute",
-                    width: "25%",
-                    top: "0%",
-                    left: "-55%"
-                }} 
-                />
-                <h3 
-                style = {{
-                    color: "#08b84c"
-                }}
-                >You are suceesful registered!</h3>
+                <Bounce top>
+                    <img 
+                    src = { Monkey3 } 
+                    style = {{ 
+                        position: "absolute",
+                        width: "25%",
+                        top: "0%",
+                        left: "-55%"
+                    }} 
+                    />
+                </Bounce>
+                <Fade bottom>
+                    <h3 
+                    style = {{
+                        color: "#08b84c"
+                    }}
+                    >You are suceesful registered!</h3>
+                </Fade>
             </div>
         )
     }

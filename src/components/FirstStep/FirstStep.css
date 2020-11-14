@@ -1,7 +1,8 @@
 .inputField{
+    width: 50%;
     display: block;
     padding: 0.4em 1.3em;
-    margin: 1.5em 0.3em 0.3em 0;
+    margin: 1.5em 0.3em 0.3em 1.5em;
     border-radius: 2em;
     box-sizing: border-box;
     text-decoration: none;
@@ -16,13 +17,15 @@
 .inputFieldError{
     color: red;
     font-size: medium;
-    margin-left: 0.5em;
+    margin-left: 2.5em;
 }
 
 a.nextBtn{
+    position: fixed;
+    right: 23%;
     display: inline-block;
     padding: 0.3em 1.2em;
-    margin: 2em 0.3em 0.3em 0;
+    margin: 1em 0.3em 0.3em 0;
     border-radius: 2em;
     box-sizing: border-box;
     text-decoration: none;

@@ -1,5 +1,9 @@
 .main{
-    padding: 5%;
+    padding: 5% 5% 5% 8%;
+}
+
+.registration{
+    font-size: xxx-large;
 }
 
 .status{
