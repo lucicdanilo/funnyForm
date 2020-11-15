@@ -6,3 +6,9 @@
     height: 100%;
     width: 50%;
 }
+
+@media (max-width:999px){
+    .content{
+        width: 100%;
+    }
+}

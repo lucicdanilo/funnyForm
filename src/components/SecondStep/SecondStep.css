@@ -8,27 +8,37 @@
 }
 
 a.backBtn{
+    position: fixed;
+    left: 54%;
     display: inline-block;
-    padding: 0.3em 1.2em;
+    padding: 0.5em 1.5em;
     margin: 1em 0.3em 0.3em 1.2em;
     border-radius: 2em;
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: bold;
     color:#FFFFFF;
     background-color:#b80808;
     text-align: center;
     transition: all 0.2s;
     cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1); 
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
 }
 
 a.backBtn:hover{
     background-color:#be0000;
 }
 
-@media all and (max-width:30em){
-a.backBtn{
-    display: block;
-    margin: 0.2em auto;
-}}
+
+@media (max-width:999px){
+    a.backBtn{
+        left: 8%;
+        position: initial;
+    }
+
+    a.nextButton{
+        position: initial;
+    }
+}
