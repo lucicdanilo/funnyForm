@@ -49,7 +49,7 @@ class FinalStep extends Component {
         }
 
         function submitRegistration(formData){
-            return new Promise((resolve, reject) => {
+            return new Promise(() => {
                 setTimeout(function (){
                     console.log(formData);         
                     document.getElementById('successfulMsg').style.display = "block";
@@ -83,7 +83,7 @@ class FinalStep extends Component {
                         color: "#08b84c",
                         display: "none"
                     }}
-                >Your data was successful submited!</h3>
+                >Your data was successfully submitted!</h3>
                     <Loader
                         type="Oval"
                         color="#08b84c"

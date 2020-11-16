@@ -81,7 +81,7 @@ class Main extends Component {
                 step: this.state.step + 1 
             });   
         }else{
-            this.setState({ firstNameError: "First name is required!" })
+            this.setState({ firstNameError: "Hey, I bet that you have first name." })
         }
     }
 
@@ -113,7 +113,7 @@ class Main extends Component {
                 this.setState({ passwordError: "Password is required!" })
             }
         }else{
-            this.setState({ emailError: "Email is required!" })
+            this.setState({ emailError: "I bet that you have e-mail address" })
         }
     }
 
