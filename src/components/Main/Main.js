@@ -104,7 +104,7 @@ class Main extends Component {
                             this.setState({ termsAndConditionsError: "Terms and Coditions must be checked!" })
                         }
                     }else{
-                        this.setState({ passwordConfirmError: "Passwords are not same!" })
+                        this.setState({ passwordConfirmError: "Passwords are different!" })
                     }
                 }else{
                     this.setState({ passwordConfirmError: "Confirmed password is required!" })
@@ -140,57 +140,55 @@ class Main extends Component {
     handleBlur = input => event => {   
         if(input === 'firstName'){
             if( event.target.value.length === 0 ){
-                this.setState({ firstNameError: "First name is required!" });
+                this.setState({ firstNameError: "Hey, I bet that you have first name." });
             }
             if( event.target.value.length < 2 && event.target.value.length > 0 ){
-                this.setState({ firstNameError: "Minimum length of first name is 2" });
+                this.setState({ firstNameError: "This is too short for real name" });
             } 
             if( event.target.value.length > 25 ){
-                this.setState({ firstNameError: "Maximum length of first name is 25" });
+                this.setState({ firstNameError: "This is too long for real name" });
             }
         }
 
         if(input === 'lastName'){
             if( event.target.value.length < 2 && event.target.value.length > 0 ){
-                this.setState({ lastNameError: "Minimum length of last name is 2" });
+                this.setState({ lastNameError: "This is too short for last name" });
             }
             if( event.target.value.length > 25 ){
-                this.setState({ lastNameError: "Maximum length of first name is 25" });
+                this.setState({ lastNameError: "This is too long for last name" });
             }
         }
 
         if(input === 'username'){
             if( event.target.value.length < 4 && event.target.value.length > 0){
-                this.setState({ usernameError: "Minimum length of last name is 4" });
+                this.setState({ usernameError: "Minimum length of username is 4" });
             } 
             if( event.target.value.length > 20 ){
-                this.setState({ usernameError: "Maximum length of first name is 20" });
+                this.setState({ usernameError: "Maximum length of username is 20" });
             }
         }
 
         if(input === 'email'){
-            if(!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(event.target.value))){
-                this.setState({ emailError: "This is not valid form of e-mail!" });
-            }
             if( event.target.value.length === 0 ){
-                this.setState({ emailError: "Email is required!" });
+                this.setState({ emailError: "I bet that you have e-mail address" });
+            }
+            if(!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(event.target.value))){
+                this.setState({ emailError: "Admit that this is not e-mail" });
             }
         }
 
         if(input === 'password'){
-            if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value))){
-                this.setState({ passwordError: "This is not valid format od password!" });
-            }
             if( event.target.value.length === 0 ){
                 this.setState({ passwordError: "Password is required!" });
+            }
+            if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value))){
+                this.setState({ passwordError: "Better think of a better password!" });
             }
         }
 
         if(input === 'passwordConfirm'){
-            if(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value)){
-
-            }else{
-                this.setState({ passwordConfirmError: "This is not valid format od password!" });
+            if(!(/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(event.target.value))){
+                this.setState({ passwordConfirmError: "This is not valid format of password!" });
             }
         }
     }
